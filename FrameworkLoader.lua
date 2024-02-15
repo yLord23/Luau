@@ -44,9 +44,7 @@ local function compileDependencie(Dependencies: {[number]: Folder}) : ()
 		local dependencieModules: dependencieSetter<number, ModuleScript> = Folder:GetChildren() :: {}
 		
 		for _,moduleScript: ModuleScript in dependencieModules do
-			
 			local Return = require(moduleScript) :: any
-			
 			loadedModulesFromDependencie[moduleScript.Name] = Return :: typeof(Return)
 		end
 	end
