@@ -1,3 +1,10 @@
+--[[
+ --> Loads the game structure and returns it in an array
+ --> 12/28/2023
+
+@Framework Library
+]]--
+
 --!strict
 
 --//Imports
