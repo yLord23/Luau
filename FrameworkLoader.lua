@@ -39,7 +39,7 @@ local function cycleAvoider(): number
 	return RunService.Heartbeat:Wait()
 end
 
-local function unpackLoadedDependencie(loadedModules: loadedDependencie, dependencieClass: string?) : ()
+local function unpackLoadedDependencie(loadedModules: loadedDependencie, dependencieClass: string?): ()
 	if dependencieClass then
 		--> Create a new dependencieClass if none]
 		Library[dependencieClass] = {}
@@ -55,7 +55,7 @@ local function unpackLoadedDependencie(loadedModules: loadedDependencie, depende
 	end
 end
 
-local function compileDependencie(Dependencies: {[number]: Folder}, dependencieClass: string) : () 
+local function compileDependencie(Dependencies: {[number]: Folder}, dependencieClass: string): () 
 	--> Avoid de module cycle error
 	cycleAvoider() 
 	
@@ -74,7 +74,7 @@ local function compileDependencie(Dependencies: {[number]: Folder}, dependencieC
 	unpackLoadedDependencie(loadedModulesFromDependencie, dependencieClass)
 end
 
-local function setupFramework()
+local function setupFramework(): ()
 	--> Call loaders & compilers
 	compileDependencie(Side == "Client" and DependenciesFolder:WaitForChild("Client"):GetChildren() or _Services.ServerScriptService:WaitForChild("Server"):GetChildren(), Side)
 	compileDependencie(DependenciesFolder:WaitForChild("Shared"):GetChildren(), "Shared")
