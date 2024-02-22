@@ -1,6 +1,6 @@
 --[[
  --> Loads the game structure and returns it in an array.
- --> 15/02/2023
+ --> 02/15/2023
  --> @yLord <> @yLordGhost
 
 @Framework Library
