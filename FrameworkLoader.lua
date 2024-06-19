@@ -76,8 +76,8 @@ end
 
 local function setupFramework(): ()
 	--> Call loaders & compilers
-	compileDependencie(Side == "Client" and DependenciesFolder:WaitForChild("Client"):GetChildren() or _Services.ServerScriptService:WaitForChild("Server"):GetChildren(), Side)
-	compileDependencie(DependenciesFolder:WaitForChild("Shared"):GetChildren(), "Shared")
+	compileDependencie(Side == "Client" and DependenciesFolder.Client:GetChildren() or _Services.ServerScriptService:WaitForChild("Server"):GetChildren(), Side)
+	compileDependencie(DependenciesFolder.Shared:GetChildren(), "Shared")
 	unpackLoadedDependencie(_Extra)
 	
 	--> Setup Completed > Framework loaded
